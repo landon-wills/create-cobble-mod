@@ -1,0 +1,32 @@
+{
+  "name": "create-cobble-mod",
+  "version": "0.0.2",
+  "description": "Scaffolds a Cobblemon mod based on desired goals",
+  "author": "landon-wills",
+  "scripts": {
+    "build": "yarn clean && shadow-cljs release lib",
+    "clean": "shx rm -rf dist/",
+    "watch": "shadow-cljs watch lib",
+    "server": "shadow-cljs stop && shadow-cljs start",
+    "run": "node bin/create-cobble-mod.js",
+    "format": "zprint-clj --hang -i \"./src/**/*.{clj,cljs,cljc,edn}\" -o ./ && zprint-clj -i \"./*.edn\" -o ./"
+  },
+  "devDependencies": {
+    "shadow-cljs": "2.25.2",
+    "shx": "^0.3.4",
+    "zprint-clj": "^0.8.0"
+  },
+  "bin": {
+    "create-cobble-mod": "./bin/create-cobble-mod.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "dependencies": {
+    "@inquirer/prompts": "^3.0.1",
+    "chalk": "^4.1.0",
+    "cli-progress": "^3.12.0",
+    "simple-git": "^3.19.1"
+  }
+}

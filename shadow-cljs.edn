@@ -1,0 +1,7 @@
+{:builds
+   {:lib
+      {:exports-var create-cobble-mod.app/exports,
+       :output-to "dist/lib.js",
+       :target :node-library}},
+ :dependencies [[funcool/promesa "11.0.671"]],
+ :source-paths ["src"]}
